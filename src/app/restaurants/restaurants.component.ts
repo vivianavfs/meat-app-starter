@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { Title } from '@angular/platform-browser'
+
+import { Restaurant } from './restaurant/restaurant.model'
+import { RestaurantsService } from './restaurants.service'
 
 @Component({
   selector: 'mt-restaurants',
   templateUrl: './restaurants.component.html',
-  styleUrls: ['./restaurants.component.css']
+  styleUrls: ['./restaurants.component.css'],
+  viewProviders: [Title]
 })
 export class RestaurantsComponent implements OnInit {
 
-  constructor() { }
+	restaurants: Restaurant[]
+
+  constructor(title: Title, private service: RestaurantsService) { 
+  	title.setTitle('Meat - Restaurants')
+  }
 
   ngOnInit() {
+  	this.service.restaurants().subscribe(restaurants => this.restaurants = restaurants)
   }
 
 }
