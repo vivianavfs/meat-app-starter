@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser'
 @Component({
   selector: 'mt-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css'],
   viewProviders: [Title]
 })
 export class AboutComponent implements OnInit {

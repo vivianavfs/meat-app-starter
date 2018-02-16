@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser'
 @Component({
   selector: 'mt-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
   viewProviders: [Title]
 })
 export class HomeComponent implements OnInit {
