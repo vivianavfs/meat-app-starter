@@ -1,7 +1,6 @@
 <div class="col-md-9 col-xs-12">
-  <div *ngFor="let menuItem of menuItens">
-    <mt-menu-item [menuItem]="menuItem"></mt-menu-item>
-  </div>
+    <mt-menu-item *ngFor="let item of itens | async" 
+    [menuItem]="item" (add)="addMenuItem($event)"></mt-menu-item>
 </div>
 <div class="col-md-3 col-xs-12">
   <!--INICIO DO CARRINHO-->
