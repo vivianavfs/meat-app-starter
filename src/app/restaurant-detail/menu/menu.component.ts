@@ -15,8 +15,7 @@ export class MenuComponent implements OnInit {
   constructor(private service: RestaurantsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-  	console.log(this.route.parent.snapshot.params['id'])
-  	this.service.menuByRestaurantId(this.route.parent.snapshot.params['id'])
+  	this.service.menuOfRestaurant(this.route.parent.snapshot.params['id'])
   	.subscribe(itens => this.menuItens = itens)
   }
 
