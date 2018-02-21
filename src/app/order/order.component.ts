@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RadioOption } from '../shared/radio/radio-option.model';
 import { CartItem } from '../restaurant-detail/cart/cart-item.model'
 import { OrdemService } from './order.service'
+import { Order, OrderItem } from './order.model'
 
 @Component({
   selector: 'mt-order',
@@ -15,8 +16,6 @@ export class OrderComponent implements OnInit {
 		{label: 'Cartão Refeição', value:'REF'}
 	]
 
-	itemsCart: CartItem[] = []
-
   constructor(private orderService: OrdemService) { }
 
   delivery = 8;
@@ -28,11 +27,11 @@ export class OrderComponent implements OnInit {
   		return this.orderService.itemsValue();
   	}
 
-  	getItems(): CartItem[]{
+  	items(): CartItem[] {
 		return this.orderService.getItems()
 	}
 
-	remove(item: CartItem){
+	remove(item: CartItem) {
 		this.orderService.remove(item)
 	}
 
@@ -42,6 +41,11 @@ export class OrderComponent implements OnInit {
 
 	decreaseQty(item: CartItem) {
 		this.orderService.decreaseQty(item);
+	}
+
+	checkoutOrder(order: Order) {
+		order.items = this.items().map((item: CartItem) => new OrderItem(item.quantity,item.menuItem.id))
+		console.log(this.orderService.checkoutOrder(order).subscribe())
 	}
 
 }
