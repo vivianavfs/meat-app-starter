@@ -8,6 +8,10 @@ export class OrdemService {
 
 	constructor(private shoppingCartService: ShoppingCartService){}
 
+	itemsValue(): number {
+		return this.shoppingCartService.total();
+	}
+
 	getItems(): CartItem[]{
 		return this.shoppingCartService.items
 	}
