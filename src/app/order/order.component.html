@@ -3,8 +3,6 @@
 
 <section class="content">
 	<section class="invoice">
-		<p>{{form.valid}}<p>
-		<p>{{form.value | json}}<p>
 		<form #form="ngForm">
 			<div class="row">
 				<div class="col-xs-12">
@@ -30,7 +28,7 @@
 				</div>
 				<div class="col-sm-3 col-xs-6">
 					<mt-input-container label="Complemento">
-						<input type="text" class="form-control" name="optional" ngModel placeholder="Complemento">
+						<input type="text" class="form-control" name="optionalAddress" ngModel placeholder="Complemento">
 					</mt-input-container>
 
 				</div>

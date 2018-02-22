@@ -372,13 +372,34 @@
   ],
   "orders": [
     {
+      "address": "aqzzz",
+      "number": "1",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "items": [
+        {
+          "quantity": 2,
+          "itemId": "cup-cake"
+        }
+      ],
       "id": 1
     },
     {
+      "address": "Rua um",
+      "number": "1",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "items": [
+        {
+          "quantity": 2,
+          "itemId": "capp"
+        },
+        {
+          "quantity": 1,
+          "itemId": "espreso"
+        }
+      ],
       "id": 2
-    },
-    {
-      "id": 3
     }
   ]
 }
