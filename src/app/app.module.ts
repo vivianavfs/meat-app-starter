@@ -2,14 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 
 
 import { AppComponent } from './app.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
-import { AboutComponent } from './about/about.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component'
@@ -35,7 +34,6 @@ import { RatingComponent } from './shared/rating/rating.component'
   declarations: [
     AppComponent,
     RestaurantsComponent,
-    AboutComponent,
     RestaurantComponent,
     HomeComponent,
     HeaderComponent,
@@ -56,6 +54,7 @@ import { RatingComponent } from './shared/rating/rating.component'
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [RestaurantsService, ShoppingCartService, OrdemService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
